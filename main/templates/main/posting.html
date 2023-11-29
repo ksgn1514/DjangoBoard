@@ -19,7 +19,12 @@
         </tr>
         <tr>
           <td>{{post.title}}</td>
-          <td>{{post.content}}</td>
+          <td>
+            {% if post.mainphoto %}
+            <img src="{{ post.mainphoto.url }}" alt="" height="600" />
+            <br />
+            {% endif %} {{post.content}}
+          </td>
           <td>{{post.pub_date}}</td>
         </tr>
       </table>
