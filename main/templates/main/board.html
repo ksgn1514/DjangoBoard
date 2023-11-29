@@ -1,8 +1,19 @@
 <html>
   <head>
-    <title>Board List</title>
+    <title>Blog List</title>
   </head>
   <body>
     <h1>게시판 페이지입니다</h1>
+    <!-- 게시판(postlist)의 게시글(list)을 하나씩 보여줍니다 -->
+
+    <table>
+      {% for list in postlist %}
+      <ul>
+        <li>{{list.title}}</li>
+        <li>{{list.content}}</li>
+        <li>{{list.pub_date}}</li>
+      </ul>
+      {% endfor %}
+    </table>
   </body>
 </html>
