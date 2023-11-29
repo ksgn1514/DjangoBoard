@@ -1,19 +1,29 @@
 <html>
   <head>
-    <title>Blog List</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Board List</title>
   </head>
   <body>
-    <h1>게시판 페이지입니다</h1>
-    <!-- 게시판(postlist)의 게시글(list)을 하나씩 보여줍니다 -->
-
-    <table>
-      {% for list in postlist %}
-      <ul>
-        <li>{{list.title}}</li>
-        <li>{{list.content}}</li>
-        <li>{{list.pub_date}}</li>
-      </ul>
-      {% endfor %}
-    </table>
+    <div class="container">
+      <h1>게시판 페이지입니다</h1>
+      <!-- 게시판(postlist)의 게시글(list)을 하나씩 보여줍니다 -->
+      <!-- {와 %로 이루어진 구문 내부엔 파이썬이 사용됩니다 -->
+      <table class="table">
+        <tr>
+          <th>제목</th>
+        </tr>
+        {% for list in postlist %}
+        <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
+        <tr>
+          <td><a href="{{list.pk}}/">{{list.title}}</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
   </body>
 </html>
