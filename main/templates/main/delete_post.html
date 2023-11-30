@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>글 삭제</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+      <h3>{{ post.title }} - 정말 삭제하시겠습니까?</h3>
+      <button type="submit">확인</button>
+      <button><a href="/board/{{post.pk}}/">취소</a></button>
+    </form>
+  </body>
+</html>
